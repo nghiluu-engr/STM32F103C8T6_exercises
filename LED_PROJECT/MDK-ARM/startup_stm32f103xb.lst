@@ -471,13 +471,13 @@ ARM Macro Assembler    Page 8
               00000400 
               00000200 
               00000000 
-Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
-ork --depend=led_project\startup_stm32f103xb.d -oled_project\startup_stm32f103x
-b.o -I.\RTE\_LED_PROJECT -IC:\Users\CNTT\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.
-0\CMSIS\Core\Include -IC:\Users\CNTT\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP
-\2.4.1\Device\Include --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSIO
-N SETA 529" --predefine="_RTE_ SETA 1" --predefine="STM32F10X_MD SETA 1" --list
-=startup_stm32f103xb.lst startup_stm32f103xb.s
+Command Line: --debug --xref --diag_suppress=9931,A1950W --cpu=Cortex-M3 --depe
+nd=led_project\startup_stm32f103xb.d -oled_project\startup_stm32f103xb.o -I.\RT
+E\_LED_PROJECT -I"C:\Users\Gia Nghi\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMS
+IS\Core\Include" -I"C:\Users\Gia Nghi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DF
+P\2.4.1\Device\Include" --predefine="__EVAL SETA 1" --predefine="__UVISION_VERS
+ION SETA 540" --predefine="STM32F10X_MD SETA 1" --predefine="_RTE_ SETA 1" --li
+st=startup_stm32f103xb.lst startup_stm32f103xb.s
 
 
 

@@ -10,6 +10,7 @@ void led_effects_init(LED_CONTROL *led_control, RGB *led_1, RGB *led_2, RGB *led
 	
 	led_control->state = 0;
 	led_control->state_rainbow = 0;
+	
 	led_control->start = HAL_GetTick();
 	led_control->display_time = 1000;
 	
@@ -98,6 +99,7 @@ void state_fade_in_out(LED_CONTROL *led_control)
 }
 void state_rainbow_blink(LED_CONTROL *led_control)
 {
+
 	switch (led_control->state)
 	{
 		case 0:
@@ -156,6 +158,7 @@ void state_rainbow_blink(LED_CONTROL *led_control)
 
 void state_1_rainbow(LED_CONTROL *led_control)
 {
+
 	switch (led_control->state)
 	{
 		case 0:
@@ -207,24 +210,207 @@ void state_1_rainbow(LED_CONTROL *led_control)
 			state_SetColor(led_control);
 			break;
 		default:
+			state_off(led_control);
 			led_control->state = 0;
+			led_control->state_rainbow++;
 			break;
 	}
 }
-void set_state_rainbow_follow(LED_CONTROL *led_control)
+void state_2_rainbow(LED_CONTROL *led_control)
 {
-	
+
+	switch (led_control->state)
+	{
+		case 0:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = RED;
+			led_control->led_3->color = OFF;
+			led_control->led_4->color = OFF;
+			state_SetColor(led_control);
+			break;
+		case 1:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = YELLOW;
+			led_control->led_3->color = OFF;
+			led_control->led_4->color = OFF;
+			state_SetColor(led_control);
+			break;
+		case 2:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = GREEN;
+			led_control->led_3->color = OFF;
+			led_control->led_4->color = OFF;
+			state_SetColor(led_control);
+			break;
+		case 3:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = BLUE;
+			led_control->led_3->color = OFF;
+			led_control->led_4->color = OFF;
+			state_SetColor(led_control);
+			break;
+		case 4:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = CYAN;
+			led_control->led_3->color = OFF;
+			led_control->led_4->color = OFF;
+			state_SetColor(led_control);
+		case 5:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = PURPLE;
+			led_control->led_3->color = OFF;
+			led_control->led_4->color = OFF;
+			state_SetColor(led_control);
+			break;
+		case 6:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = WHITE;
+			led_control->led_3->color = OFF;
+			led_control->led_4->color = OFF;
+			state_SetColor(led_control);
+			break;
+		default:
+			state_off(led_control);
+			led_control->state = 0;
+			led_control->state_rainbow++;
+			break;
+	}
+}
+void state_3_rainbow(LED_CONTROL *led_control)
+{
+
+	switch (led_control->state)
+	{
+		case 0:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = OFF;
+			led_control->led_3->color = RED;
+			led_control->led_4->color = OFF;
+			state_SetColor(led_control);
+			break;
+		case 1:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = OFF;
+			led_control->led_3->color = YELLOW;
+			led_control->led_4->color = OFF;
+			state_SetColor(led_control);
+			break;
+		case 2:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = OFF;
+			led_control->led_3->color = GREEN;
+			led_control->led_4->color = OFF;
+			state_SetColor(led_control);
+			break;
+		case 3:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = OFF;
+			led_control->led_3->color = BLUE;
+			led_control->led_4->color = OFF;
+			state_SetColor(led_control);
+			break;
+		case 4:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = OFF;
+			led_control->led_3->color = CYAN;
+			led_control->led_4->color = OFF;
+			state_SetColor(led_control);
+		case 5:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = OFF;
+			led_control->led_3->color = PURPLE;
+			led_control->led_4->color = OFF;
+			state_SetColor(led_control);
+			break;
+		case 6:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = OFF;
+			led_control->led_3->color = WHITE;
+			led_control->led_4->color = OFF;
+			state_SetColor(led_control);
+			break;
+		default:
+			state_off(led_control);
+			led_control->state = 0;
+			led_control->state_rainbow++;
+			break;
+	}
+}
+void state_4_rainbow(LED_CONTROL *led_control)
+{
+	switch (led_control->state)
+	{
+		case 0:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = OFF;
+			led_control->led_3->color = OFF;
+			led_control->led_4->color = RED;
+			state_SetColor(led_control);
+			break;
+		case 1:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = OFF;
+			led_control->led_3->color = OFF;
+			led_control->led_4->color = YELLOW;
+			state_SetColor(led_control);
+			break;
+		case 2:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = OFF;
+			led_control->led_3->color = OFF;
+			led_control->led_4->color = GREEN;
+			state_SetColor(led_control);
+			break;
+		case 3:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = OFF;
+			led_control->led_3->color = OFF;
+			led_control->led_4->color = BLUE;
+			state_SetColor(led_control);
+			break;
+		case 4:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = OFF;
+			led_control->led_3->color = OFF;
+			led_control->led_4->color = CYAN;
+			state_SetColor(led_control);
+			break;
+		case 5:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = OFF;
+			led_control->led_3->color = OFF;
+			led_control->led_4->color = PURPLE;
+			state_SetColor(led_control);
+			break;
+		case 6:
+			led_control->led_1->color = OFF;
+			led_control->led_2->color = OFF;
+			led_control->led_3->color = OFF;
+			led_control->led_4->color = WHITE;
+			state_SetColor(led_control);
+			break;
+		default:
+			state_off(led_control);
+			led_control->state = 0;
+			led_control->state_rainbow++;
+			break;
+	}
 }
 void state_rainbow_follow(LED_CONTROL *led_control)
 {
 	switch (led_control->state_rainbow)
 	{
 		case 0:
-			if (HAL_GetTick() - led_control->start >= led_control->display_time)
-			{
-				state_1_rainbow(led_control);
-				led_control->start = HAL_GetTick();
-			}
+			state_1_rainbow(led_control);		
+			break;
+		case 1:
+			state_2_rainbow(led_control);
+			break;
+		case 2:
+			state_3_rainbow(led_control);
+			break;
+		case 3:
+			state_4_rainbow(led_control);
 			break;
 		default:
 			led_control->state_rainbow = 0;
