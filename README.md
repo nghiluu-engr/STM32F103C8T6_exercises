@@ -24,7 +24,7 @@ All the main code files are placed inside the `User_Libs` folder. It includes 3 
 * **RGB LED library (`led_rgb.h` / `led_rgb.c`):** Controls each RGB LED individually.
 * **LED Effect library (`led_effect.h` / `led_effect.c`):** Controls the effects of all 4 RGB LEDs together at the same time.
 
-### 3. Programming Techniques Used
+### 3. Techniques
 * **Non-blocking delay:** Using `HAL_GetTick()` instead of `HAL_Delay()` so the CPU can do multiple things at once without waiting.
 * **Finite State Machine (FSM):** Using a state machine to switch smoothly between different LED modes when pressing the button.
 
